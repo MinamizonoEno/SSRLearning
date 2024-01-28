@@ -1,5 +1,6 @@
+import React from "react";
 import ReactDOMServer from "react-dom/server";
-import { App } from "./App";
+import { App } from "./App.tsx";
 import fs from "fs";
 import path from "path";
 
@@ -25,4 +26,4 @@ async function writeFile(file: string, data: string): Promise<void> {
   fs.promises.writeFile(file, data);
 }
 
-writeFile(path.resolve(__dirname, "../build/index.html"), html);
+writeFile(path.resolve(__dirname, "../dist/index.html"), html);
