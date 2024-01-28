@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "run-p build:*",
     "build:client": "webpack",
-    "build:generate": "ts-node ../frontend/src/generate.tsx"
+    "build:generate": "ts-node -P ./tsconfig.json ../frontend/src/generate.tsx "
   },
   "author": "",
   "license": "ISC",
