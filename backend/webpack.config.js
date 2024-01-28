@@ -1,8 +1,8 @@
-// webpack.config.js
 const path = require("path");
 
 module.exports = {
-  entry: "./server/index.js",
+  mode: "production",
+  entry: path.resolve(__dirname, "../frontend/src/cliant.tsx"),
   target: "node",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -11,12 +11,28 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.tsx$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
+        use: [
+          {
+            loader: "babel-loader",
+          },
+          {
+            loader: "ts-loader",
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "css-loader",
+          },
+        ],
       },
     ],
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
 };
