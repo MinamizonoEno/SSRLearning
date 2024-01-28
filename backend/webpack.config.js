@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-  entry: path.resolve(__dirname, "../frontend/src/cliant.tsx"),
+  entry: path.resolve(__dirname, "../frontend/src/client.tsx"),
   target: "node",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -21,6 +21,9 @@ module.exports = {
             loader: "ts-loader",
           },
         ],
+        resolve: {
+          extensions: [".tsx", ".ts", ".js"],
+        },
       },
       {
         test: /\.css$/,
