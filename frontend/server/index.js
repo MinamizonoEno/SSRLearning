@@ -20,10 +20,10 @@ app.get("/", (req, res) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Vite + React + TS</title>
       <script src="client.js" async defer></script>
+      <link rel="stylesheet" href="client.css" />
     </head>
     <body>
       <div id="root">${app}</div>
-      <script type="module" src="/src/main.tsx"></script>
     </body>
   </html>
     `;
